@@ -6,12 +6,19 @@
   <ul>
     <li><a class:active={$page.url.pathname === "/"} href="/">Home</a></li>
     <li>
-      <a class:active={$page.url.pathname === "/about/"} href="/about/">About</a
+      <a class:active={$page.url.pathname.startsWith("/about")} href="/about/"
+        >About</a
       >
     </li>
     <li>
-      <a class:active={$page.url.pathname === "/contact/"} href="/contact/"
-        >Contact</a
+      <a class:active={$page.url.pathname.startsWith("/blog")} href="/blog/"
+        >Blog</a
+      >
+    </li>
+    <li>
+      <a
+        class:active={$page.url.pathname.startsWith("/contact")}
+        href="/contact/">Contact</a
       >
     </li>
   </ul>

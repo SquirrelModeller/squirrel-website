@@ -47,16 +47,6 @@
   .page-header {
     margin-bottom: 2rem;
   }
-
-  .label {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--accent);
-    letter-spacing: 0.05em;
-    display: block;
-    margin-bottom: 0.4rem;
-  }
-
   .prose p {
     line-height: 1.8;
     color: var(--text);
