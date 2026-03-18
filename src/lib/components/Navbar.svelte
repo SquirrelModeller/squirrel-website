@@ -6,10 +6,12 @@
   <ul>
     <li><a class:active={$page.url.pathname === "/"} href="/">Home</a></li>
     <li>
-      <a class:active={$page.url.pathname === "/about"} href="/about">About</a>
+      <a class:active={$page.url.pathname === "/contact/"} href="/about/"
+        >About</a
+      >
     </li>
     <li>
-      <a class:active={$page.url.pathname === "/contact"} href="/contact"
+      <a class:active={$page.url.pathname === "/contact/"} href="/contact/"
         >Contact</a
       >
     </li>
