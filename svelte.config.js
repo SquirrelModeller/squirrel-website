@@ -8,7 +8,6 @@ const config = {
 		mdsvex({
 			extensions: ['.md']
 		}),
-		vitePreprocess()
 	],
 	kit: {
 		adapter: adapter({
