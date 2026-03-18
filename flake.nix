@@ -58,8 +58,7 @@
 
         buildPhase = ''
           runHook preBuild
-          export HOME="$TMPDIR"
-          pnpm install --offline --frozen-lockfile
+          export CI=true
           pnpm build
           runHook postBuild
         '';
