@@ -1,5 +1,5 @@
 <script>
-  const usrname = "squirrelmodeller";
+  const usrname = "SquirrelModeller";
 </script>
 
 <div class="ring-wrapper">
