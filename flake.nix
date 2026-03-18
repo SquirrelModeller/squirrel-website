@@ -34,7 +34,6 @@
           ./svelte.config.js
           ./vite.config.ts
           ./tsconfig.json
-          ./jsconfig.json
         ];
       };
     in {
