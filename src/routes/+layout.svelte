@@ -2,13 +2,14 @@
   import "../app.css";
   import Navbar from "$lib/components/Navbar.svelte";
   import Webring from "$lib/components/Webring.svelte";
-  Webring;
+
+  let { children } = $props();
 </script>
 
 <Navbar />
 
 <main>
-  <slot />
+  {@render children()}
 </main>
 
 <footer>
