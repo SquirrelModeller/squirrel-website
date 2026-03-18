@@ -32,7 +32,7 @@
           ./package.json
           ./pnpm-lock.yaml
           ./svelte.config.js
-          ./vite.config.js
+          ./vite.config.ts
           ./tsconfig.json
           ./jsconfig.json
         ];
