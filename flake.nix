@@ -53,7 +53,7 @@
           version = "1.0.0";
           src = filteredSrc;
           fetcherVersion = 3;
-          hash = "sha256-5Mew/3ta1IrQwk2YrcG4vGcqECMGLTaAhGCXyMF3Ivs=";
+          hash = "sha256-KQbvUqM4YMjMOrNgA85l0ZSNpJvJAF9uF8skCIXZhaE=";
         };
 
         buildPhase = ''
