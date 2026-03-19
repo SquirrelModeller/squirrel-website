@@ -3,6 +3,44 @@
   const Post = data.component;
 </script>
 
+<a href="/blog" class="back-link">← blog</a>
+
+<div class="post-meta">
+  {#if data.metadata.date}
+    <span class="mono muted" style="font-size: 0.75rem">
+      {new Date(data.metadata.date).toISOString().slice(0, 10)}
+    </span>
+  {/if}
+  {#each data.metadata.tags as tag}
+    <span class="post-tag">{tag}</span>
+  {/each}
+</div>
+
 <h1>{data.metadata.title ?? "Untitled post"}</h1>
 
-<Post />
+<hr />
+
+<article class="post-content">
+  <Post />
+</article>
+
+{#if data.prev || data.next}
+  <nav class="post-nav">
+    <div class="nav-post">
+      {#if data.prev}
+        <span class="label">← prev</span>
+        <a href="/blog/{data.prev.slug}">{data.prev.title}</a>
+      {/if}
+    </div>
+    <div class="nav-post right">
+      {#if data.next}
+        <span class="label">next →</span>
+        <a href="/blog/{data.next.slug}">{data.next.title}</a>
+      {/if}
+    </div>
+  </nav>
+{/if}
+
+<style>
+  @import "../blog.css";
+</style>

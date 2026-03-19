@@ -11,7 +11,11 @@ export function load() {
 		slug: slugFromPath(path),
 		title: mod.metadata?.title ?? slugFromPath(path),
 		date: mod.metadata?.date ?? null,
-		description: mod.metadata?.description ?? ''
+		description: mod.metadata?.description ?? '',
+		thumbnail: mod.metadata?.thumbnail ?? '',
+		thumbnail_alt: mod.metadata?.thumbnail ?? '',
+		tags: mod.metadata?.tags ?? [],
+		excerpt: mod.metadata?.excerpt ?? ''
 	}));
 
 	posts.sort((a, b) => {

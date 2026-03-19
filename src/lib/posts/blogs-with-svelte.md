@@ -1,7 +1,10 @@
 ---
 title: Blogs with Svelte
 date: 2026-03-18
-description: Re-inventing the wheel, but this time with markdown and questionable decisions
+thumbnail: /assets/SquirrelModeller.svg
+thunbmail_alt: A test image
+excerpt: Re-inventing the wheel, but this time with markdown and questionable decisions
+tags: ['svelte', 'blogs']
 ---
 
 Like any self-respecting Nix user, I obviously needed my own blog.
@@ -150,7 +153,7 @@ Yes, that is in fact my website embedded inside a blog post that lives on my web
 
 Once HTML is allowed inside markdown, the entire design system of the site suddenly becomes available. For example, if your main CSS file defines something like a callout component, you can simply use it directly inside the markdown.
 
-You can create thing like buttons:
+You can create things like buttons:
 ```html
 <a href="/" style="
 display:inline-block;
