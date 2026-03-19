@@ -42,12 +42,10 @@
   <span class="cursor" class:stopped={finished}></span>
 </div>
 
-{#if finished}
-  <div class="result">
-    <h1>{name}</h1>
-    <p class="tagline">{tagline}</p>
-  </div>
-{/if}
+<div class="result" class:visible={finished}>
+  <h1>{name}</h1>
+  <p class="tagline">{tagline}</p>
+</div>
 
 <style>
   .terminal {
@@ -92,6 +90,11 @@
   }
 
   .result {
+    visibility: hidden;
+  }
+
+  .result.visible {
+    visibility: visible;
     animation: fadeUp 0.4s ease both;
   }
 

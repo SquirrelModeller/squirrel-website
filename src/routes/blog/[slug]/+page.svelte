@@ -3,21 +3,21 @@
   const Post = data.component;
 </script>
 
-<a href="/blog" class="back-link">← blog</a>
+<header class="page-header">
+  <a href="/blog" class="back-link">← blog</a>
 
-<div class="post-meta">
-  {#if data.metadata.date}
-    <span class="mono muted" style="font-size: 0.75rem">
-      {new Date(data.metadata.date).toISOString().slice(0, 10)}
-    </span>
-  {/if}
-  {#each data.metadata.tags as tag}
-    <span class="post-tag">{tag}</span>
-  {/each}
-</div>
-
-<h1>{data.metadata.title ?? "Untitled post"}</h1>
-
+  <div class="post-meta">
+    {#if data.metadata.date}
+      <span class="mono muted" style="font-size: 0.75rem">
+        {new Date(data.metadata.date).toISOString().slice(0, 10)}
+      </span>
+    {/if}
+    {#each data.metadata.tags as tag}
+      <span class="post-tag">{tag}</span>
+    {/each}
+  </div>
+  <h1>{data.metadata.title ?? "Untitled post"}</h1>
+</header>
 <hr />
 
 <article class="post-content">

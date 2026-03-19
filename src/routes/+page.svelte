@@ -27,15 +27,19 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    margin: 3rem 0 2rem;
+    margin: 3rem auto 2rem;
+    width: fit-content;
   }
 
   .logo {
     width: 5rem;
     height: 5rem;
     flex-shrink: 0;
-
     animation: float 6s ease-in-out infinite;
+  }
+
+  .logo-wrap {
+    flex-shrink: 0;
   }
 
   @keyframes float {
@@ -68,18 +72,17 @@
     font-style: italic;
     color: var(--text-muted);
     max-width: 60ch;
+    width: fit-content;
   }
 
   @media (max-width: 480px) {
     .hero {
-      flex-direction: column;
-      align-items: flex-start;
       gap: 1.25rem;
     }
 
     .logo {
-      width: 60px;
-      height: 60px;
+      width: 3.5rem;
+      height: 3.5rem;
     }
   }
 </style>

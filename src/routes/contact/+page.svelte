@@ -81,8 +81,9 @@
     transition:
       border-color 0.15s ease,
       box-shadow 0.15s ease;
-  }
 
+    min-width: 0;
+  }
   a.contact-row:hover {
     border-color: var(--accent-soft);
     box-shadow: var(--shadow-md);
@@ -99,6 +100,7 @@
     font-weight: 600;
     font-size: 0.95rem;
     min-width: 5rem;
+    flex-shrink: 0;
   }
 
   .username {
@@ -106,5 +108,9 @@
     font-size: 0.82rem;
     color: var(--text-muted);
     margin-left: auto;
+
+    min-width: 0;
+    overflow-wrap: anywhere;
+    text-align: right;
   }
 </style>

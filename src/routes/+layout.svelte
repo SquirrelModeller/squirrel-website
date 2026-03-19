@@ -15,10 +15,3 @@
 <footer>
   <Webring />
 </footer>
-
-<style>
-  main {
-    /* width: min(100% - 2rem, var(--max-width)); */
-    padding: 4rem 1.5rem;
-  }
-</style>

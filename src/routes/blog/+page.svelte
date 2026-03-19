@@ -9,8 +9,10 @@
   }
 </script>
 
-<span class="label">$ blog</span>
-<h1>Blog</h1>
+<header class="page-header">
+  <span class="label">$ blog</span>
+  <h1>Blog</h1>
+</header>
 
 <ul class="posts">
   {#each data.posts as post}
@@ -41,4 +43,8 @@
 
 <style>
   @import "./blog.css";
+
+  .page-header {
+    margin-bottom: 2rem;
+  }
 </style>

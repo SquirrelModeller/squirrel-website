@@ -1,4 +1,4 @@
-@import url('https://fonts.bunny.net/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url("https://fonts.bunny.net/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap");
 :root {
   color-scheme: light dark;
 
@@ -11,16 +11,16 @@
   --accent: #e8935a;
   --accent-soft: #f2c49b;
 
-  /* --max-width: 72rem; */
+  --max-width: 70rem;
   --radius: 10px;
   --radius-sm: 6px;
 
-  --font-body: 'DM Sans', sans-serif;
-  --font-heading: 'DM Serif Display', serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: "DM Sans", sans-serif;
+  --font-heading: "DM Serif Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
 
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,8 +31,8 @@
     --text: #ede9e2;
     --text-muted: #9a9490;
     --border: #2a2d34;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -49,6 +49,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
@@ -60,7 +61,23 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2, h3 {
+main {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  flex: 1;
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main > * {
+  width: 100%;
+  max-width: 70ch;
+}
+h1,
+h2,
+h3 {
   font-family: var(--font-body);
   font-weight: 700;
   line-height: 1.2;
@@ -68,13 +85,18 @@ h1, h2, h3 {
   color: var(--text);
 }
 
-h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin: 0 0 1rem; }
-h2 { font-size: clamp(1.3rem, 3vw, 1.75rem); margin: 2.5rem 0 0.75rem; }
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 0 0 1rem;
+}
+h2 {
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  margin: 2.5rem 0 0.75rem;
+}
 
 p {
   margin: 0 0 1.25rem;
   color: var(--text);
-  max-width: 70ch;
 }
 
 a {
@@ -94,21 +116,6 @@ img {
   max-width: 100%;
 }
 
-
-main {
-  width: min(100% - 2rem, var(--max-width));
-  margin: 0 auto;
-  flex: 1;
-}
-
-.card {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  padding: 1.5rem;
-}
-
 hr {
   border: none;
   border-top: 1px solid var(--border);
@@ -123,7 +130,6 @@ footer {
   margin-top: 3rem;
 }
 
-
 .label {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -133,7 +139,10 @@ footer {
   margin-bottom: 0.4rem;
 }
 
-
-.muted { color: var(--text-muted); }
-.mono  { font-family: var(--font-mono); font-size: 0.9em; }
-
+.muted {
+  color: var(--text-muted);
+}
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}

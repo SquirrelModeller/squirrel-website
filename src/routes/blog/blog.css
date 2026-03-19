@@ -16,10 +16,6 @@
   margin-bottom: 0.75rem;
 }
 
-.post-content {
-  max-width: 68ch;
-}
-
 .post-content :global(p) {
   line-height: 1.8;
   margin: 0 0 1.25rem;
@@ -196,4 +192,49 @@ ul.posts li {
   flex-shrink: 0;
   opacity: 0.7;
   margin-top: 2px;
+}
+
+@media (max-width: 600px) {
+  .post-card {
+    flex-wrap: wrap;
+  }
+
+  .post-thumb {
+    width: 60px;
+    height: 60px;
+  }
+
+  .post-excerpt {
+    white-space: normal;
+  }
+
+  .post-meta {
+    flex-wrap: wrap;
+  }
+
+  .post-nav {
+    flex-direction: column;
+  }
+
+  .post-nav .nav-post.right {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .post-content {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .post-content :global(*) {
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .post-content :global(pre) {
+    overflow-x: auto;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
 }
