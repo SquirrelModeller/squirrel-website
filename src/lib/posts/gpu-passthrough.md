@@ -32,7 +32,7 @@ specialisation.gpu-passthrough.configuration = {
 
 That’s it. Wrap your cursed GPU passthrough setup in there, give it a tag, and suddenly it's one system, yet multiple realities and zero hacks. I spent years brute-forcing this. Years. I could have avoided so much suffering.
 
-## Windows HELL
+## Fixing GPU Passthrough Issues on Windows
 Of course, once you've wrestled VFIO into submission and isolated the GPU, you’d expect Windows to just... work. But no. Windows doesn't *work*. It *never* works. Instead, your GPU outputs what I can only describe as the graphical equivalent of a dying CRT having an LSD episode. Corrupted frames, flashing garbage, random artifacts, pure madness.
 
 <img src="/assets/blogs/gpu_passthrough/corrupted_gpu.webp" alt="Image of a corrupted output of the GPU, trying to boot windows">
@@ -47,7 +47,7 @@ Lie.
 
 You lie to Windows, pretending your GPU isn’t what it is. And suddenly, as if bribed, Windows behaves. It’s not pretty, it’s still Windows, but when that login screen shows up clean for the first time? You feel something.
 
-## Driver madness
+## Driver Reset Issues (AMD)
 Now we get to the real villain. Not Windows. AMD. If your GPU supports FLR (Function Level Reset), congratulations - you are one of the chosen few. If not? Welcome to hell. You shut down your VM. Everything looks fine. You start it again. Nothing. No signal, no output, no life. Because the GPU refuses to reset. It just sits there like:
 
 > "We had a good run. I'm done now"
@@ -65,7 +65,7 @@ echo 1 | sudo tee /sys/bus/pci/rescan
 And somehow it brings the GPU back to life.
 
 
-## Down the Rabbit hole of displays
+## Display Setup Rabbit Hole
 
 Of course, while doing all this, I had exactly one physical monitor. So every time I launched or quit the VM, I crawled under the desk - on my knees like a discount Cirque du Soleil performer - swapping the HDMI/DP cable between my iGPU and dGPU. After doing this enough times to question my life choices, I finally had a revelation:
 
@@ -112,7 +112,7 @@ You'll also need a SPICE channel:
 
 
 
-## A virtual ~~girlfriend~~ monitor
+## Virtual Display Driver (VDD)
 Once Looking Glass was working, technically I could stop.
 
 Obviously I didn’t.
@@ -137,7 +137,7 @@ You know that moment when everything is finally working - GPU passed through, Wi
 
 And then. **Silence**. The emotional kind. Because of course you forgot audio.
 
-### USB Audio: The Toddler With the Death Grip
+## USB Audio: The Toddler With the Death Grip
 My first instinct was "I’ll just pass through my USB headset". Huge mistake. USB passthrough is a jealous toddler. Once it grabs your device, it's gone. Host audio? Dead. Hotplugging? Dead. Your headset now lives in Windows permanently. You may visit it on weekends.
 
 USB passthrough is a jealous little gremlin. Give it an inch and it will take your entire sound stack, your patience, and possibly your will to live.
