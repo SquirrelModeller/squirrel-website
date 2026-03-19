@@ -1,6 +1,6 @@
 <script lang="ts">
   let { data } = $props();
-  const Post = data.component;
+  const Post = $derived(data.component);
 </script>
 
 <header class="page-header">
