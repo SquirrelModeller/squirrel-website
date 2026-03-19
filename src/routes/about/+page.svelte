@@ -1,3 +1,8 @@
+<svelte:head>
+  <title>About page</title>
+  <meta name="description" content="Squirrel Modeller's introduction." />
+</svelte:head>
+
 <article class="about">
   <header class="page-header">
     <span class="label">$ whoami</span>

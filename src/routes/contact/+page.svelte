@@ -21,6 +21,14 @@
   ];
 </script>
 
+<svelte:head>
+  <title>Contact information</title>
+  <meta
+    name="description"
+    content="Contact information for Squirrel Modeller."
+  />
+</svelte:head>
+
 <header class="page-header">
   <span class="label">$ contact</span>
   <h1>Get in touch</h1>

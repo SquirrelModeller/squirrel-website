@@ -9,6 +9,11 @@
   }
 </script>
 
+<svelte:head>
+  <title>Blog page</title>
+  <meta name="description" content="All of SquirrelModeller's blogs." />
+</svelte:head>
+
 <header class="page-header">
   <span class="label">$ blog</span>
   <h1>Blog</h1>

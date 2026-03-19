@@ -2,6 +2,14 @@
   import Terminal from "$lib/components/Terminal.svelte";
 </script>
 
+<svelte:head>
+  <title>Home Page</title>
+  <meta
+    name="description"
+    content="SquirrelModeller's website. Contains introduction, blogs and contact information."
+  />
+</svelte:head>
+
 <section class="hero">
   <div class="logo-wrap">
     <img

@@ -3,6 +3,11 @@
   const Post = $derived(data.component);
 </script>
 
+<svelte:head>
+  <title>Blog</title>
+  <meta name="description" content="This a blog." />
+</svelte:head>
+
 <header class="page-header">
   <a href="/blog" class="back-link">← blog</a>
 
