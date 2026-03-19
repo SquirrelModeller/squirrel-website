@@ -206,5 +206,5 @@ Not even slightly.
 There are countless tools that could have solved this problem in five minutes with far less effort and significantly fewer opportunities to break things in spectacular ways. But building the system yourself has a certain charm, because now I have a blog engine that does exactly what I want, integrates perfectly with the rest of the site, and lets me embed random HTML experiments directly inside my posts. More importantly, it allows me to write markdown, publish static pages, and occasionally create recursive website embeddings that should probably never exist. But to be honest, that feels like exactly the kind of engineering decision I can live with.
 
 <div style="padding:1rem;border-left:4px solid orange;background:#fff7e6">
-  Note: This blog has been proofread by ChatGPT.
+  <p style="color: black">Note: This blog has been proofread by ChatGPT.</p>
 </div>
