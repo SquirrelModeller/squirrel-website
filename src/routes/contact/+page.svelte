@@ -7,10 +7,23 @@
       href: "https://github.com/SquirrelModeller",
     },
     {
+      logo_url: "https://cdn.simpleicons.org/proton",
+      alt: "Proton",
+      username: "squirrelmodeller@protonmail.com",
+      href: null,
+    },
+    {
       logo_url: "https://cdn.simpleicons.org/matrix",
       alt: "Matrix",
       username: "@squirrelmodelling:matrix.org",
       href: "https://matrix.to/#/@squirrelmodelling:matrix.org",
+    },
+    {
+      logo_url:
+        "https://raw.githubusercontent.com/fluxerapp/static/6c688eb94b39c5ca789e3286124d26c9880cf2af/marketing/branding/symbol-black.svg",
+      alt: "Fluxer",
+      username: "SquirrelModeller#0558",
+      href: null,
     },
     {
       logo_url: "https://cdn.simpleicons.org/discord",
@@ -113,7 +126,7 @@
 
   .username {
     font-family: var(--font-mono);
-    font-size: 0.82rem;
+    font-size: 0.7rem;
     color: var(--text-muted);
     margin-left: auto;
 
