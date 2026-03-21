@@ -28,9 +28,6 @@
       of unleashing creativity to the fullest without being held back by
       technical limitations.
     </p>
-    <p>
-      My creative endeavours also include logo creation. I even created my own.
-    </p>
   </section>
 
   <div class="section-divider">
@@ -42,8 +39,56 @@
   <section class="prose">
     <h2>My Nix journey</h2>
     <p>
-      Nix has grabbed my attention. I'll add more glazing, once I am done with
-      this website.
+      I write a lot of code, and over time I've developed a strong preference
+      for systems that behave predictably. A function should return the same
+      result every time given the same input. That level of determinism is what
+      makes software reliable.
+    </p>
+    <p>
+      Naturally, this raises the question: why don't we expect the same from the
+      systems we run our software on? The operating system is not just a tool in
+      the background - it is something we interact with constantly. It shapes
+      how we work, what we can build, and how efficiently we can move between
+      tasks.
+    </p>
+    <p>
+      In practice, traditional setups fall short of this ideal. I rely on a
+      specific development environment: an IDE (the program used to write and
+      manage code), with a consistent set of plugins, language versions, and
+      tools. Recreating that environment across multiple machines is tedious and
+      often inconsistent. Different operating systems ship different versions of
+      software, updates introduce breaking changes, and subtle mismatches
+      accumulate over time.
+    </p>
+    <p>
+      These are tools, and tools should not behave unpredictably. A workflow
+      should not degrade simply because a package updated or a machine differs
+      slightly from another.
+    </p>
+    <p>This is where Nix entered the picture.</p>
+    <p>
+      With Nix, I can declare my entire environment, from system configuration
+      to individual development dependencies as code. Instead of manually
+      setting up each machine, I describe exactly how it should be configured,
+      and that definition is reproduced identically everywhere.
+    </p>
+    <p>
+      This extends beyond just installing programs. Configuration, plugins, and
+      even cryptographic keys are managed declaratively. When something changes,
+      I update it once, and that change propagates across all systems in a
+      controlled and reproducible way.
+    </p>
+    <p>
+      It also fundamentally changes how I approach projects. Previously, I would
+      default to working on a single machine simply because reproducing the
+      setup elsewhere was too time-consuming. Now, with Nix flakes and direnv,
+      each project defines its own environment. If it works on one machine, it
+      works on all of them, whether it's macOS or Linux.
+    </p>
+    <p>
+      The result is a workflow where the environment is no longer a source of
+      friction. It becomes stable, portable, and predictable. That is exactly
+      what I expect from any well-engineered system.
     </p>
   </section>
 </article>
