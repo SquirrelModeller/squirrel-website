@@ -4,8 +4,13 @@
 </script>
 
 <svelte:head>
-  <title>Blog</title>
-  <meta name="description" content="This a blog." />
+  <title>{data.metadata.title}</title>
+  <meta name="description" content={data.metadata.excerpt} />
+
+  <meta property="og:title" content={data.metadata.title} />
+  <meta property="og:description" content={data.metadata.excerpt} />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content={data.metadata.thumbnail} />
 </svelte:head>
 
 <header class="page-header">
