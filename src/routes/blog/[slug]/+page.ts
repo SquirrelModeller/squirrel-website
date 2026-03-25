@@ -1,45 +1,35 @@
 import { error } from '@sveltejs/kit';
+import { getAdjacentPosts, getAllPosts, getPostBySlug } from '$lib/posts';
 
 export const prerender = true;
 
-const postModules = import.meta.glob('$lib/posts/*.md', { eager: true });
-
-function slugFromPath(path: string) {
-	return path.split('/').pop()!.replace('.md', '');
-}
-
 export function entries() {
-	return Object.keys(postModules).map((path) => ({
-		slug: slugFromPath(path)
+	return getAllPosts().map((post) => ({
+		slug: post.slug
 	}));
 }
 
 export function load({ params }: { params: { slug: string } }) {
-  const posts = Object.entries(postModules)
-    .map(([path, mod]: any) => ({
-      slug: slugFromPath(path),
-      title: mod.metadata?.title ?? slugFromPath(path),
-      date: mod.metadata?.date ?? null,
-    }))
-    .sort((a, b) => {
-      const da = a.date ? new Date(a.date).getTime() : 0;
-      const db = b.date ? new Date(b.date).getTime() : 0;
-      return db - da;
-    });
+	const post = getPostBySlug(params.slug);
 
-  const index = posts.findIndex((p) => p.slug === params.slug);
+	if (!post) {
+		throw error(404, 'Post not found');
+	}
 
-  for (const [path, mod] of Object.entries(postModules) as any) {
-    const slug = slugFromPath(path);
-    if (slug === params.slug) {
-      return {
-        component: mod.default,
-        metadata: mod.metadata ?? {},
-        prev: posts[index + 1] ?? null,
-        next: posts[index - 1] ?? null,
-      };
-    }
-  }
+	const { prev, next } = getAdjacentPosts(params.slug);
 
-  throw error(404, 'Post not found');
+	return {
+		component: post.component,
+		metadata: {
+			title: post.title,
+			date: post.date,
+			description: post.description,
+			excerpt: post.excerpt,
+			thumbnail: post.thumbnail,
+			thumbnail_alt: post.thumbnail_alt,
+			tags: post.tags
+		},
+		prev,
+		next
+	};
 }
