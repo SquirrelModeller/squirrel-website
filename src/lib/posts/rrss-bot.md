@@ -1,11 +1,11 @@
 ---
-title: Introducin RingRSS - an enslaved RSS reader
+title: RingRSS - an enslaved RSS reader
 date: 2026-03-25
-excerpt: Forcing people to read our blogs by pining them
+excerpt: Forcing people to read our blogs with push messages
 tags: ['code']
 ---
 
 
-## h2 Testing right now
+## This is a test article for now
 
-This is not at all the complete article. I am just testing the notification system.
+Testing to see what the RRSS bot picks up.
