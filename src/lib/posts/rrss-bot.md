@@ -2,7 +2,7 @@
 title: READ MY BLOGS (YOU NO LONGER HAVE A CHOICE)
 date: 2026-03-25
 excerpt: Forcing people to read our blogs with push messages
-tags: ['code']
+tags: ['code', 'blog']
 ---
 
 ## READ MY BLOGS
@@ -52,8 +52,6 @@ Feeds are jobs. They have deadlines. They are scheduled, rescheduled, quietly re
 It is uncomfortably close to how real production systems behave, just condensed into something small enough that you can still hold the entire mental model in your head without needing a whiteboard, three diagrams, and a mild existential crisis halfway through.
 
 Then there is the notification pipeline, which is effectively an outbox with trust issues. New entries become jobs, jobs are picked up and delivered, and if the universe decides to be uncooperative, they are retried with increasing insistence. If they fail often enough, they are eventually dropped, not out of mercy, but out of a measured and well-defined exhaustion of patience.
-
-Nothing is assumed. Everything is explicit. The system does not believe in luck, only in recorded outcomes.
 
 ## Encryption, because escalation is a lifestyle
 
