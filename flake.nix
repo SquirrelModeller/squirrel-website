@@ -34,6 +34,7 @@
         fileset = lib.fileset.unions [
           ./src
           ./static
+          ./scripts
           ./package.json
           ./pnpm-lock.yaml
           ./svelte.config.js
