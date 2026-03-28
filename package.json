@@ -5,6 +5,8 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
+		"prebuild": "node scripts/render-mermaid.js",
+		"predev": "node scripts/render-mermaid.js",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
@@ -21,5 +23,11 @@
 		"svelte-check": "^4.4.2",
 		"typescript": "^5.9.3",
 		"vite": "^7.3.1"
+	},
+	"dependencies": {
+		"mermaid": "^11.13.0",
+		"playwright": "^1.58.2",
+		"rehype-mermaid": "^3.0.0",
+		"update": "^0.7.4"
 	}
 }

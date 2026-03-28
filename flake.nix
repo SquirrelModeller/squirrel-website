@@ -16,7 +16,12 @@
         packages = with pkgs; [
           nodejs
           pnpm
+          pkgs.chromium
         ];
+
+        shellHook = ''
+          export CHROME_PATH=${pkgs.chromium}/bin/chromium
+        '';
       };
     });
 
@@ -46,6 +51,7 @@
           pkgs.nodejs
           pkgs.pnpm
           pkgs.pnpmConfigHook
+          pkgs.chromium
         ];
 
         pnpmDeps = pkgs.fetchPnpmDeps {

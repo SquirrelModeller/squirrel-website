@@ -27,3 +27,6 @@ vite.config.ts.timestamp-*
 
 #VSCode
 .vscode
+
+# Mermaid nonsense
+static/generated/
