@@ -60,36 +60,42 @@ async function renderChart(hash, chart, chromePath) {
     await fs.access(outPath);
     console.log(`  ✓ ${hash}.svg (cached)`);
     return;
-  } catch {
-  }
+  } catch {}
 
   const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'mermaid-'));
   const inputPath = path.join(tmpDir, 'diagram.mmd');
-  await fs.writeFile(inputPath, chart, 'utf8');
-
-  const args = [
-    '--yes',
-    '@mermaid-js/mermaid-cli',
-    '--input', inputPath,
-    '--output', outPath,
-    '--quiet',
-  ];
-
-  if (chromePath) {
-    const puppeteerConfigPath = path.join(tmpDir, 'puppeteer-config.json');
-    await fs.writeFile(
-      puppeteerConfigPath,
-      JSON.stringify({ executablePath: chromePath }),
-      'utf8'
-    );
-    args.push('--puppeteerConfigFile', puppeteerConfigPath);
-  }
 
   try {
-    await execFileAsync('npx', args);
+    await fs.writeFile(inputPath, chart, 'utf8');
+
+    const args = [
+      '--input', inputPath,
+      '--output', outPath,
+      '--quiet',
+    ];
+
+    if (chromePath) {
+      const puppeteerConfigPath = path.join(tmpDir, 'puppeteer-config.json');
+      await fs.writeFile(
+        puppeteerConfigPath,
+        JSON.stringify({
+          executablePath: chromePath,
+          args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        }),
+        'utf8'
+      );
+      args.push('--puppeteerConfigFile', puppeteerConfigPath);
+    }
+
+    await execFileAsync('pnpm', ['exec', 'mmdc', ...args], {
+      cwd: ROOT,
+      env: process.env,
+    });
+
     console.log(`✓ ${hash}.svg`);
   } catch (err) {
     console.error(`✗ ${hash}.svg - render failed:\n${err.stderr || err.message}`);
+    throw err;
   } finally {
     await fs.rm(tmpDir, { recursive: true, force: true });
   }
