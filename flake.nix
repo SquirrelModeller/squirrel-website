@@ -51,6 +51,9 @@
           pkgs.nodejs
           pkgs.pnpm
           pkgs.pnpmConfigHook
+        ];
+
+        buildInputs = [
           pkgs.chromium
         ];
 
@@ -59,12 +62,13 @@
           version = "1.0.0";
           src = filteredSrc;
           fetcherVersion = 3;
-          hash = "sha256-KQbvUqM4YMjMOrNgA85l0ZSNpJvJAF9uF8skCIXZhaE=";
+          hash = "sha256-H3GG9x4PNWksK/EPimv4L2NvCmr58QvqXXL95XZWwPg=";
         };
 
         buildPhase = ''
           runHook preBuild
           export CI=true
+          export CHROME_PATH=${pkgs.chromium}/bin/chromium
           pnpm build
           runHook postBuild
         '';
