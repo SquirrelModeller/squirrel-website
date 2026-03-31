@@ -19,7 +19,7 @@ So instead of waiting patiently like a well-behaved content creator, hoping some
 
 ## RingRSS - an enslaved RSS reader
 
-**RingRSS (RRSS)** is what happens when you stop pretending RSS is a polite, pull-based system and instead weaponize it into something that behaves more like a persistent, mildly aggressive courier that refuses to take "I’ll read it later" as a valid answer.
+[**RingRSS (RRSS)**](https://github.com/SquirrelModeller/rrss) is what happens when you stop pretending RSS is a polite, pull-based system and instead weaponize it into something that behaves more like a persistent, mildly aggressive courier that refuses to take "I’ll read it later" as a valid answer.
 
 It does not sit quietly in the corner waiting to be opened like a neglected app icon gathering dust. It detects updates with the same urgency as a smoke alarm detecting slightly overcooked toast, and then immediately injects those updates into systems people are already staring at, whether they explicitly asked for it or not.
 
