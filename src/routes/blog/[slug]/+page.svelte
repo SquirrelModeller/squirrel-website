@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Giscus from "$lib/components/Giscus.svelte";
   let { data } = $props();
   const Post = $derived(data.component);
 </script>
@@ -33,6 +34,8 @@
 <article class="post-content">
   <Post />
 </article>
+
+<Giscus />
 
 {#if data.prev || data.next}
   <nav class="post-nav">
