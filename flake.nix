@@ -16,11 +16,9 @@
         packages = with pkgs; [
           nodejs
           pnpm
-          pkgs.chromium
         ];
 
         shellHook = ''
-          export CHROME_PATH=${pkgs.chromium}/bin/chromium
         '';
       };
     });
@@ -34,7 +32,6 @@
         fileset = lib.fileset.unions [
           ./src
           ./static
-          ./scripts
           ./package.json
           ./pnpm-lock.yaml
           ./svelte.config.js
@@ -54,10 +51,6 @@
           pkgs.pnpmConfigHook
         ];
 
-        buildInputs = [
-          pkgs.chromium
-        ];
-
         pnpmDeps = pkgs.fetchPnpmDeps {
           pname = "squirrel-website";
           version = "1.0.0";
@@ -69,9 +62,7 @@
         buildPhase = ''
           runHook preBuild
           export CI=true
-          export CHROME_PATH=${pkgs.chromium}/bin/chromium
           pnpm install --offline --frozen-lockfile
-          node scripts/render-mermaid.js
           pnpm build
           runHook postBuild
         '';
