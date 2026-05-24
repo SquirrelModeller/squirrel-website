@@ -32,7 +32,7 @@
 
   <div class="section-divider">
     <span class="divider-line"></span>
-    <span class="divider-icon">❄</span>
+    <img class="divider-icon" src="/assets/nix-snowflake-colours.svg" alt="" aria-hidden="true" />
     <span class="divider-line"></span>
   </div>
 
@@ -122,11 +122,9 @@
   }
 
   .divider-icon {
-    color: var(--accent);
-    font-size: 0.9rem;
+    width: 1.25rem;
+    height: 1.25rem;
     opacity: 0.7;
-
-    display: inline-block;
     animation: spin 20s linear infinite;
   }
 
