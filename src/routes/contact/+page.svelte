@@ -2,6 +2,7 @@
   const contacts = [
     {
       logo_url: "https://cdn.simpleicons.org/github",
+      dark_logo_url: "https://cdn.simpleicons.org/github/ffffff",
       alt: "GitHub",
       username: "SquirrelModeller",
       href: "https://github.com/SquirrelModeller",
@@ -14,6 +15,7 @@
     },
     {
       logo_url: "https://cdn.simpleicons.org/matrix",
+      dark_logo_url: "https://cdn.simpleicons.org/matrix/ffffff",
       alt: "Matrix",
       username: "@squirrelmodelling:matrix.org",
       href: "https://matrix.to/#/@squirrelmodelling:matrix.org",
@@ -21,6 +23,7 @@
     {
       logo_url:
         "https://raw.githubusercontent.com/fluxerapp/static/6c688eb94b39c5ca789e3286124d26c9880cf2af/marketing/branding/symbol-black.svg",
+      invert_dark: true,
       alt: "Fluxer",
       username: "SquirrelModeller#0558",
       href: null,
@@ -57,13 +60,23 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={c.logo_url} alt={c.alt} class="icon" />
+          <picture>
+            {#if c.dark_logo_url}
+              <source media="(prefers-color-scheme: dark)" srcset={c.dark_logo_url} />
+            {/if}
+            <img src={c.logo_url} alt={c.alt} class="icon" class:invert-dark={c.invert_dark} />
+          </picture>
           <span class="platform">{c.alt}</span>
           <span class="username">{c.username}</span>
         </a>
       {:else}
         <div class="contact-row">
-          <img src={c.logo_url} alt={c.alt} class="icon" />
+          <picture>
+            {#if c.dark_logo_url}
+              <source media="(prefers-color-scheme: dark)" srcset={c.dark_logo_url} />
+            {/if}
+            <img src={c.logo_url} alt={c.alt} class="icon" class:invert-dark={c.invert_dark} />
+          </picture>
           <span class="platform">{c.alt}</span>
           <span class="username">{c.username}</span>
         </div>
@@ -111,10 +124,20 @@
     text-decoration: none;
   }
 
+  picture {
+    display: flex;
+    flex-shrink: 0;
+  }
+
   .icon {
     width: 1.25rem;
     height: 1.25rem;
-    flex-shrink: 0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .icon.invert-dark {
+      filter: invert(1);
+    }
   }
 
   .platform {
