@@ -1,3 +1,5 @@
+import type { Component } from 'svelte';
+
 const postModules = import.meta.glob('$lib/posts/*.md', { eager: true });
 
 export type BlogPost = {
@@ -9,7 +11,7 @@ export type BlogPost = {
 	thumbnail: string;
 	thumbnail_alt: string;
 	tags: string[];
-	component?: unknown;
+	component?: Component;
 };
 
 function slugFromPath(path: string) {
