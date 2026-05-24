@@ -1,5 +1,6 @@
 <script>
   import Terminal from "$lib/components/Terminal.svelte";
+  import InteractiveTerminal from "$lib/components/InteractiveTerminal.svelte";
 </script>
 
 <svelte:head>
@@ -29,6 +30,8 @@
 <p class="welcome">
   You've somehow arrived to my website. Please, enjoy your stay.
 </p>
+
+<InteractiveTerminal />
 
 <style>
   .hero {
