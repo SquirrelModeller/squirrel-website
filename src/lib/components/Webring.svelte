@@ -86,6 +86,7 @@
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--text-muted);
+    margin-bottom: 0;
     transition: color 0.15s ease;
   }
 
