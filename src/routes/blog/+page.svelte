@@ -30,7 +30,7 @@
         {/if}
         <div class="post-body">
           <div class="post-meta">
-            <span class="post-date mono muted">{formatDate(post.date)}</span>
+            {#if post.date}<span class="post-date mono muted">{formatDate(post.date)}</span>{/if}
             {#each post.tags as tag}
               <span class="post-tag">{tag}</span>
             {/each}
