@@ -42,6 +42,11 @@
       color: "#c47d00",
       image: "https://zip.orangc.net/raw/Q5AK8G.png",
     },
+    {
+      name: "twig",
+      url: "https://imnottwig.github.io",
+      color: "#981aed",
+    },
   ];
 
   interface BtnState {
