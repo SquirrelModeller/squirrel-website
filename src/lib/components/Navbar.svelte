@@ -17,6 +17,12 @@
     </li>
     <li>
       <a
+        class:active={$page.url.pathname.startsWith("/friends")}
+        href="/friends/">Friends</a
+      >
+    </li>
+    <li>
+      <a
         class:active={$page.url.pathname.startsWith("/contact")}
         href="/contact/">Contact</a
       >
