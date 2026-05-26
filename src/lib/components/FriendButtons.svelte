@@ -270,6 +270,12 @@
 
   function tick() {
     if (winnerIdx >= 0) {
+      if (timerEl) {
+        const w = states[winnerIdx];
+        timerEl.style.transform = `translate(calc(${w.x + BUTTON_W / 2}px - 50%), ${w.y - 20}px)`;
+        timerEl.textContent = "🏆";
+        timerEl.style.opacity = "1";
+      }
       animFrame = requestAnimationFrame(tick);
       return;
     }
@@ -491,6 +497,25 @@
       }
     }
 
+    // Last survivor wins automatically
+    let aliveCount = 0,
+      lastAlive = -1;
+    for (let i = 0; i < n; i++) {
+      if (states[i].lives > 0) {
+        aliveCount++;
+        lastAlive = i;
+      }
+    }
+    if (aliveCount === 1 && winnerIdx < 0) {
+      winnerIdx = lastAlive;
+      cursorHolder = lastAlive;
+      holdTimer = 1;
+      for (let i = 0; i < n; i++) {
+        states[i].invincible = 0;
+        if (btnEls[i]) btnEls[i].classList.remove("invincible");
+      }
+    }
+
     // Cursor hold tracking
     if (isHovering) {
       const prevHolder = cursorHolder;
@@ -598,10 +623,11 @@
       if (i === winnerIdx) el.classList.add("won");
     }
 
-    // Countdown above the holder
+    // Countdown above the holder / trophy above winner
     if (timerEl) {
-      if (cursorHolder >= 0 && holdTimer > 0) {
-        const h = states[cursorHolder];
+      const displayIdx = winnerIdx >= 0 ? winnerIdx : cursorHolder;
+      if (displayIdx >= 0 && (winnerIdx >= 0 || holdTimer > 0)) {
+        const h = states[displayIdx];
         timerEl.style.transform = `translate(calc(${h.x + BUTTON_W / 2}px - 50%), ${h.y - 20}px)`;
         timerEl.textContent =
           winnerIdx >= 0
@@ -704,16 +730,21 @@
 
   .hint {
     position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    bottom: 0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
     font-family: var(--font-mono);
     font-size: 0.7rem;
-    color: var(--text-muted);
-    opacity: 0.4;
+    color: var(--text);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0.25rem 0.6rem;
+    white-space: nowrap;
     pointer-events: none;
     transition: opacity 0.3s ease;
+    z-index: 30;
+    opacity: 1;
   }
 
   .hint.hidden {
