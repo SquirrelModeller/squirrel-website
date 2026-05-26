@@ -66,6 +66,8 @@
     deadSettled: boolean;
   }
 
+  let slotOrder: number[] = [];
+
   let containerEl: HTMLElement;
   let btnEls: HTMLElement[] = [];
   let timerEl: HTMLElement;
@@ -84,22 +86,30 @@
     const totalW = n * BUTTON_W + (n - 1) * GAP;
     const startX = Math.max(0, (w - totalW) / 2);
     const homeY = Math.floor((CONTAINER_H - BUTTON_H) / 2) - 8;
-    return friends.map((_, i) => ({
-      x: startX + i * (BUTTON_W + GAP),
-      y: homeY,
-      vx: 0,
-      vy: 0,
-      homeX: startX + i * (BUTTON_W + GAP),
-      homeY,
-      lives: LIVES,
-      cooldown: 30 + Math.floor(Math.random() * 60),
-      novaCooldown: 60 + Math.floor(Math.random() * 120),
-      stunned: 0,
-      concussed: 0,
-      invincible: 0,
-      bashing: false,
-      deadSettled: false,
-    }));
+    slotOrder = friends.map((_, i) => i);
+    for (let i = slotOrder.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [slotOrder[i], slotOrder[j]] = [slotOrder[j], slotOrder[i]];
+    }
+    return friends.map((_, i) => {
+      const slotX = startX + slotOrder[i] * (BUTTON_W + GAP);
+      return {
+        x: slotX,
+        y: homeY,
+        vx: 0,
+        vy: 0,
+        homeX: slotX,
+        homeY,
+        lives: LIVES,
+        cooldown: 30 + Math.floor(Math.random() * 60),
+        novaCooldown: 60 + Math.floor(Math.random() * 120),
+        stunned: 0,
+        concussed: 0,
+        invincible: 0,
+        bashing: false,
+        deadSettled: false,
+      };
+    });
   }
 
   function resetGame() {
@@ -620,10 +630,13 @@
 
     const ro = new ResizeObserver(([entry]) => {
       containerW = entry.contentRect.width;
-      const homes = calcHomes(containerW);
+      const n = friends.length;
+      const totalW = n * BUTTON_W + (n - 1) * GAP;
+      const startX = Math.max(0, (containerW - totalW) / 2);
+      const homeY = Math.floor((CONTAINER_H - BUTTON_H) / 2) - 8;
       for (let i = 0; i < states.length; i++) {
-        states[i].homeX = homes[i].homeX;
-        states[i].homeY = homes[i].homeY;
+        states[i].homeX = startX + slotOrder[i] * (BUTTON_W + GAP);
+        states[i].homeY = homeY;
       }
     });
     ro.observe(containerEl);
