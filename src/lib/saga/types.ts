@@ -30,6 +30,7 @@ export type SagaState = {
   keyFound: boolean
   dayOffset: number
   narrativeDay: number
+  narrativeDayAdvancedAt: string | null
   sessionClosed: boolean
 }
 

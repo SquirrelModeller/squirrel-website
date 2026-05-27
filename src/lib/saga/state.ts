@@ -26,6 +26,7 @@ export function defaultState(): SagaState {
     keyFound: false,
     dayOffset: 0,
     narrativeDay: 0,
+    narrativeDayAdvancedAt: null,
     sessionClosed: false
   }
 }
