@@ -30,10 +30,10 @@
 
   const friends: Friend[] = [
     {
-      name: "CRISPY",
+      name: "crispy",
       url: "https://crispy-caesus.eu",
       color: "#3a9c2e",
-      image: "https://crispy-caesus.eu/static/crispybutton.png",
+      image: "https://crispy-caesus.eu/static/images/crispybutton.png",
     },
     { name: "raf", url: "https://notashelf.dev/" },
     {
