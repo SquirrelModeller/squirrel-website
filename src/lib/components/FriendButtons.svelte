@@ -47,6 +47,11 @@
       url: "https://imnottwig.github.io",
       color: "#981aed",
     },
+    {
+      name: "jaglekon",
+      url: "https://jaglekon.de",
+      color: "#2f1e2e",
+    },
   ];
 
   interface BtnState {
