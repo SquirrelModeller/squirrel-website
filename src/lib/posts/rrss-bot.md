@@ -2,7 +2,7 @@
 title: READ MY BLOGS (YOU NO LONGER HAVE A CHOICE)
 date: 2026-03-25
 excerpt: Forcing people to read our blogs with push messages
-tags: ['code', 'blog']
+tags: ['code', 'blogs']
 ---
 
 ## READ MY BLOGS
