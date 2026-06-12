@@ -81,7 +81,7 @@ After the right amount of time, not so long they give up, not so short they don'
 
 "Oh yeah I just ran nix run github:user/application and it worked"
 
-That's it. That's the whole thing. You don't explain. You don't evangelize. You don't pull out the manifesto. You let those nine words sit in the air like a grenade with the pin already out, already rolling gently across the floor, bumping softly against their foot.
+That's it. That's the whole thing. You don't explain. You don't evangelize. You don't pull out the manifesto. You let those eleven words sit in the air like a grenade with the pin already out, already rolling gently across the floor, bumping softly against their foot.
 
 
 They will ask what that is.
