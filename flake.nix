@@ -55,8 +55,8 @@
           pname = "squirrel-website";
           version = "1.0.0";
           src = filteredSrc;
-          fetcherVersion = 3;
-          hash = "sha256-qk4XZtfdMoDd+CismBR2Wnr/i8X3PI08KJHM4m5QpDo=";
+          fetcherVersion = 4;
+          hash = "sha256-y+wKk2mU1Sp5yo0tH3KhfomV0+jfCWm/CLO86Zg547Y=";
         };
 
         buildPhase = ''
