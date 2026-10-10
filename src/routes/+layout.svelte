@@ -30,7 +30,7 @@
   <Webring />
 </footer>
 
-{#if browser}
+<!-- {#if browser}
   <CookieSaga />
   <KeyHunt />
-{/if}
+{/if} -->
