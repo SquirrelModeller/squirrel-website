@@ -52,6 +52,12 @@
       url: "https://jaglekon.de",
       color: "#2f1e2e",
     },
+    {
+      name: "baumsplitter41",
+      url: "https://baumsplitter41.eu",
+      color: "#4eade0",
+      image: "https://baumsplitter41.eu/static/assets/baumsplitter41.gif",
+    },
   ];
 
   interface BtnState {
