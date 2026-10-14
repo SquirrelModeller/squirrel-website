@@ -135,6 +135,9 @@
 <header class="page-header">
   <span class="label">$ blog</span>
   <h1>Blog</h1>
+  <a href="/rss.xml" class="rss-link mono" type="application/rss+xml"
+    >rss feed</a
+  >
 </header>
 
 <div class="search-row">
@@ -198,6 +201,18 @@
 
   .page-header {
     margin-bottom: 2rem;
+  }
+
+  .rss-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+
+  .rss-link:hover {
+    text-decoration: underline;
   }
 
   .search-row {
