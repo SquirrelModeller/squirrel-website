@@ -33,7 +33,7 @@
       name: "crispy",
       url: "https://crispy-caesus.eu",
       color: "#3a9c2e",
-      image: "https://crispy-caesus.eu/static/images/crispybutton.png",
+      image: "https://crispy-caesus.eu/static/buttons/people/crispybutton.png",
     },
     { name: "raf", url: "https://notashelf.dev/" },
     {
