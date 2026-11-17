@@ -51,6 +51,7 @@
       name: "jaglekon",
       url: "https://jaglekon.de",
       color: "#2f1e2e",
+      image: "https://jaglekon.de/images/Button.png",
     },
     {
       name: "baumsplitter41",
